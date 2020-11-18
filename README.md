@@ -1,5 +1,17 @@
-# projet-social-2020-MarBzZ
+# Projet Social
 
-Aplication de chat avec un salon collectif, un chat privé entre 2 personne, un écran de statistiques(donnée a déterminer), un écran d'options par exemple un mode nuit et un écran supplémentaire a déterminer
+Application de chat avec:
+- un salon de chat collectif
+- un chat privé entre 2 personnes
+- un écran de statistiques (donnée à déterminer)
+- un écran d'options (par exemple un mode nuit)
+- un écran supplémentaire comme la liste des salons disponibles
 
-projet-social-2020 created by GitHub Classroom
+
+## Particpants
+
+*Brandon Marceau*\
+*Kenny Maréchal*\
+*Guillaume Vernaz*\
+*Hy-Vong Georges Dit Rap*\
+*Maxime Daigle Vigneault*
