@@ -4,6 +4,7 @@ import com.sun.media.jfxmedia.logging.Logger;
 
 import vue.Vue;
 import vue.VueAcceuil;
+import vue.VueChatPrive;
 
 public class Controleur {
 	
@@ -13,6 +14,6 @@ public class Controleur {
 	
 	public static Vue selectionnerVuePrincipale() { 
 		/*La vue principale c'est la vue qui comporte les listes*/
-		return VueAcceuil.getInstance();
+		return VueChatPrive.getInstance();
 	}
 }
