@@ -7,51 +7,52 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 
-public class VueChatPrive extends Vue{
+public class VueAccueil extends Vue{
 
-	public static VueChatPrive instance;
-	public static VueChatPrive getInstance() {if(null == instance)instance = new VueChatPrive(); return instance;}
+	public static VueAccueil instance;
+	public static VueAccueil getInstance() {if(null == instance)instance = new VueAccueil(); return instance;}
 		
 	protected Controleur controleur;
 	
-	private VueChatPrive () {
-		super("vue_chat_prive.fxml");
+	private VueAccueil () {
+		super("vue_accueil.fxml");
 		super.controleur = this.controleur = new Controleur();
-		Logger.logMsg(Logger.INFO, "new VueChatPrive()");
+		Logger.logMsg(Logger.INFO, "new VueAcceuil()");
 	}
 	
 	public Controleur getControleur() {return this.controleur;}
 	
-	public void activerControles(){
+	public void activerControles()
+	{
+		
 		super.activerControles();
 		
-		/*Button actionAccueil = (Button) lookup("#btn-accueil");
-		actionAccueil.setOnAction(new EventHandler<ActionEvent>() 
-		{
-            @Override public void handle(ActionEvent e) 
-            {
-            	Logger.logMsg(Logger.INFO, "Bouton Accueil Activer");
-            	VueAccueil.getInstance().getControleur().actionOuvrirAccueil(VueAccueil.getInstance());
-            }
-        });
-		
-		Button actionListeSalon = (Button) lookup("#btn-salons");
+		/*Button actionListeSalon = (Button) lookup("#btn-salons");
 		actionListeSalon.setOnAction(new EventHandler<ActionEvent>() 
 		{
             @Override public void handle(ActionEvent e) 
             {
-            	Logger.logMsg(Logger.INFO, "Bouton Accueil Activer");
+            	Logger.logMsg(Logger.INFO, "Bouton Salons Activer");
             	VueSalons.getInstance().getControleur().actionOuvrirListeSalons(VueSalons.getInstance());
             }
         });
 		
+		Button actionChatPrive = (Button) lookup("#btn-chat");
+		actionChatPrive.setOnAction(new EventHandler<ActionEvent>() 
+		{
+            @Override public void handle(ActionEvent e) 
+            {
+            	Logger.logMsg(Logger.INFO, "Bouton ChatPriver activer");
+            	VueChatPrive.getInstance().getControleur().actionOuvrirChatPrive(VueChatPrive.getInstance());
+            }
+        });
 		
 		Button actionParametre = (Button) lookup("#btn-reglage");
 		actionParametre.setOnAction(new EventHandler<ActionEvent>() 
 		{
             @Override public void handle(ActionEvent e) 
             {
-            	Logger.logMsg(Logger.INFO, "Bouton Suivie Activer");
+            	Logger.logMsg(Logger.INFO, "Bouton Parametre Activer");
             	VueParametre.getInstance().getControleur().actionOuvrirParametre(VueParametre.getInstance());
             }
         });
@@ -61,7 +62,7 @@ public class VueChatPrive extends Vue{
 		{
             @Override public void handle(ActionEvent e) 
             {
-            	Logger.logMsg(Logger.INFO, "Bouton Suivie Activer");
+            	Logger.logMsg(Logger.INFO, "Bouton Statistiques Activer");
             	VueStatistiques.getInstance().getControleur().actionOuvrirStatistiques(VueStatistiques.getInstance());
             }
         });*/

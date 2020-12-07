@@ -7,17 +7,17 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 
-public class VueParametre extends Vue{
+public class VueStatistiques extends Vue{
 
-	public static VueParametre instance;
-	public static VueParametre getInstance() {if(null == instance)instance = new VueParametre(); return instance;}
+	public static VueStatistiques instance;
+	public static VueStatistiques getInstance() {if(null == instance)instance = new VueStatistiques(); return instance;}
 		
 	protected Controleur controleur;
 	
-	private VueParametre() {
-		super("vue_parametre.fxml");
+	private VueStatistiques () {
+		super("vue_accueil.fxml");
 		super.controleur = this.controleur = new Controleur();
-		Logger.logMsg(Logger.INFO, "new VueParametre()");
+		Logger.logMsg(Logger.INFO, "new VueAcceuil()");
 	}
 	
 	public Controleur getControleur() {return this.controleur;}
@@ -55,6 +55,16 @@ public class VueParametre extends Vue{
             }
         });
 		
+		Button actionParametre = (Button) lookup("#btn-reglage");
+		actionParametre.setOnAction(new EventHandler<ActionEvent>() 
+		{
+            @Override public void handle(ActionEvent e) 
+            {
+            	Logger.logMsg(Logger.INFO, "Bouton Suivie Activer");
+            	VueParametre.getInstance().getControleur().actionOuvrirParametre(VueParametre.getInstance());
+            }
+        });
+		
 		Button actionStatistiques = (Button) lookup("#btn-statistiques");
 		actionStatistiques.setOnAction(new EventHandler<ActionEvent>() 
 		{
@@ -65,5 +75,4 @@ public class VueParametre extends Vue{
             }
         });*/
 	}
-
 }
