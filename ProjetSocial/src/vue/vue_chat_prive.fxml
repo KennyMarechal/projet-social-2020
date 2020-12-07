@@ -40,11 +40,11 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" stylesheets="@decoration/style.css">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@decoration/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Pane prefHeight="79.0" prefWidth="600.0" style="-fx-background-color: #cfcfcf;">
+            <Pane prefHeight="80.0" prefWidth="1280.0" style="-fx-background-color: #cfcfcf;">
                <children>
                   <Label id="vue-chat-prive-titre" fx:id="vueChatPriveTitre" layoutX="14.0" layoutY="24.0" prefHeight="18.0" prefWidth="308.0" text="Chat privé avec : {destinataire}">
                      <font>
@@ -53,12 +53,12 @@
                   </Label>
                </children>
             </Pane>
-            <Line endY="79.0" startX="600.0" startY="79.0" stroke="#b000ff" strokeWidth="3.0" />
-            <Pane id="vue-chat-prive-panneau-messages" fx:id="vueChatPrivePanneauMessages" layoutX="23.0" layoutY="81.0" prefHeight="564.0" prefWidth="554.0" />
-            <Pane layoutX="23.0" layoutY="645.0" prefHeight="141.0" prefWidth="554.0" style="-fx-background-color: #cfcfcf;">
+            <Line endY="80.0" startX="1280.0" startY="80.0" stroke="#b000ff" strokeWidth="3.0" />
+            <Pane id="vue-chat-prive-panneau-messages" fx:id="vueChatPrivePanneauMessages" layoutX="19.0" layoutY="82.0" prefHeight="449.0" prefWidth="1242.0" />
+            <Pane layoutX="19.0" layoutY="531.0" prefHeight="141.0" prefWidth="1242.0" style="-fx-background-color: #cfcfcf;">
                <children>
-                  <TextArea id="vue-chat-prive-champ-message" fx:id="vueChatPriveChampMessage" prefHeight="94.0" prefWidth="554.0" />
-                  <Button id="vue-chat-prive-action-envoyer" fx:id="vueChatPriveActionEnvoyer" layoutX="482.0" layoutY="102.0" mnemonicParsing="false" text="Envoyer" />
+                  <TextArea id="vue-chat-prive-champ-message" fx:id="vueChatPriveChampMessage" prefHeight="94.0" prefWidth="1242.0" />
+                  <Button id="vue-chat-prive-action-envoyer" fx:id="vueChatPriveActionEnvoyer" layoutX="1170.0" layoutY="102.0" mnemonicParsing="false" text="Envoyer" />
                </children>
             </Pane>
          </children>
