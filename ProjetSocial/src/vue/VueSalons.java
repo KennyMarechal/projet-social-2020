@@ -48,7 +48,7 @@ public class VueSalons extends Vue{
             }
         });
 		
-		Button actionParametre = (Button) lookup("#btn-reglage");
+		Button actionParametre = (Button) lookup("#btn-parametres");
 		actionParametre.setOnAction(new EventHandler<ActionEvent>() 
 		{
             @Override public void handle(ActionEvent e) 

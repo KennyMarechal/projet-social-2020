@@ -7,8 +7,8 @@ public class Fenetre extends Navigateur {
 	
 	@Override
 	public void start(Stage stade) throws Exception {
-		stade.setHeight(800);
-		stade.setWidth(600);
+		stade.setWidth(1280);
+		stade.setHeight(720);
 		stade.setTitle("Titre");
 		stade.setScene(Controleur.selectionnerVuePrincipale()); // une vue est appliquer a la fenetre
 		stade.show();
