@@ -12,10 +12,10 @@ La base de données est construite avec le SGBD PostgreSQL
     - **titre** : text
 - message
     - **id** : serial PRIMARY_KEY
-    - **auteur** : text
     - **moment** : timestamp without timezone
     - **texte** : text
     - **salon_id** : bigint
+    - **utilisateur_id** : bigint
 - utilisateur
     - **id** : serial PRIMARY_KEY
     - **pseudo** : text
