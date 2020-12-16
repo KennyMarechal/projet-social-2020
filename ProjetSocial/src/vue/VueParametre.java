@@ -25,16 +25,16 @@ public class VueParametre extends Vue{
 	public void activerControles(){
 		super.activerControles();
 		
-		/*Button actionAccueil = (Button) lookup("#btn-accueil");
+		Button actionAccueil = (Button) lookup("#retour");
 		actionAccueil.setOnAction(new EventHandler<ActionEvent>() 
 		{
             @Override public void handle(ActionEvent e) 
             {
             	Logger.logMsg(Logger.INFO, "Bouton Accueil Activer");
-            	VueAccueil.getInstance().getControleur().actionOuvrirAccueil(VueAccueil.getInstance());
+            	VueSalons.getInstance().getControleur().actionOuvrirListeSalons(VueSalons.getInstance());
             }
         });
-		
+		/*
 		Button actionListeSalon = (Button) lookup("#btn-salons");
 		actionListeSalon.setOnAction(new EventHandler<ActionEvent>() 
 		{
