@@ -70,7 +70,7 @@ public class VueSalons extends Vue{
 		
 	}
 	
-	/*public void afficherCroisieres(List<Salon> salons)
+	/*public void afficherSalons(List<Salon> salons)
 	{
 		
 		Logger.logMsg(Logger.INFO,"VueSalons.afficherSalons");
