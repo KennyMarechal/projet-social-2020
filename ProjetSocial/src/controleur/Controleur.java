@@ -1,7 +1,11 @@
 package controleur;
 
+import java.util.List;
+
 import com.sun.media.jfxmedia.logging.Logger;
 
+import donnee.SalonDAO;
+import modele.Salon;
 import vue.Fenetre;
 import vue.Navigateur;
 import vue.Vue;
@@ -22,6 +26,9 @@ public class Controleur {
 		//return VueAccueil.getInstance();
 		//return VueParametre.getInstance();
 		//return VueChatPrive.getInstance();
+		
+		tests();
+		
 		return VueSalons.getInstance();
 	}
 
@@ -68,4 +75,9 @@ public class Controleur {
 			
 		}
 	}*/
+	
+	private static void tests() {
+		
+		List<Salon> listeMois = SalonDAO.getInstance().getListe();
+		System.out.println((listeMois.get(0)).getTitre());	}
 }
