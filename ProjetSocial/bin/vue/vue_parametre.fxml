@@ -63,7 +63,7 @@
                      <toggleGroup>
                         <ToggleGroup fx:id="group" />
                      </toggleGroup></RadioButton>
-                  <RadioButton layoutX="80.0" layoutY="95.0" mnemonicParsing="false" text="Clair" toggleGroup="$group" />
+                  <RadioButton id="radio-clair" layoutX="80.0" layoutY="95.0" mnemonicParsing="false" text="Clair" toggleGroup="$group" />
                </children>
             </Pane>
             <Pane id="vue-parametre-message" fx:id="vueParametreMessage" layoutX="425.0" layoutY="568.0" prefHeight="130.0" prefWidth="430.0" style="-fx-border-style: solid; -fx-border-color: black; -fx-border-radius: 10;" stylesheets="@decoration/style.css">
@@ -73,7 +73,7 @@
                      <toggleGroup>
                         <ToggleGroup fx:id="affichage" />
                      </toggleGroup></RadioButton>
-                  <RadioButton layoutX="80.0" layoutY="95.0" mnemonicParsing="false" text="Petit" toggleGroup="$affichage" />
+                  <RadioButton id="radio-petit" layoutX="80.0" layoutY="95.0" mnemonicParsing="false" text="Petit" toggleGroup="$affichage" />
                </children>
             </Pane>
             <Text layoutX="522.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MON COMPTE">

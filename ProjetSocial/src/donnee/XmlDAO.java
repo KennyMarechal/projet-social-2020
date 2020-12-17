@@ -32,4 +32,10 @@ public class XmlDAO {
 		}
 		return doc;
 	}
+	
+	public boolean decoderReponseAction(String xml)
+	{
+		System.out.println("xml" + xml);
+		return true;
+	}
 }

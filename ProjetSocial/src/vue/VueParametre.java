@@ -6,6 +6,7 @@ import controleur.Controleur;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 
 public class VueParametre extends Vue{
 
@@ -13,6 +14,9 @@ public class VueParametre extends Vue{
 	public static VueParametre getInstance() {if(null == instance)instance = new VueParametre(); return instance;}
 		
 	protected Controleur controleur;
+	
+	protected boolean isSombre = false;
+	protected boolean isTextPetit = false;
 	
 	private VueParametre() {
 		super("vue_parametre.fxml");
@@ -30,40 +34,17 @@ public class VueParametre extends Vue{
 		{
             @Override public void handle(ActionEvent e) 
             {
-            	Logger.logMsg(Logger.INFO, "Bouton Accueil Activer");
+            	Logger.logMsg(Logger.INFO, "Bouton retour Activer");
             	VueSalons.getInstance().getControleur().actionOuvrirListeSalons(VueSalons.getInstance());
             }
         });
-		/*
-		Button actionListeSalon = (Button) lookup("#btn-salons");
-		actionListeSalon.setOnAction(new EventHandler<ActionEvent>() 
-		{
-            @Override public void handle(ActionEvent e) 
-            {
-            	Logger.logMsg(Logger.INFO, "Bouton Accueil Activer");
-            	VueSalons.getInstance().getControleur().actionOuvrirListeSalons(VueSalons.getInstance());
-            }
-        });
+        
+        RadioButton RadioBoutonClair = (RadioButton) lookup("#radio-clair");
+        RadioBoutonClair.setSelected(!isSombre);
+        
+        RadioButton RadioBoutonPetitText = (RadioButton) lookup("#radio-petit");
+        RadioBoutonPetitText.setSelected(!isTextPetit);
 		
-		Button actionChatPrive = (Button) lookup("#btn-chat");
-		actionChatPrive.setOnAction(new EventHandler<ActionEvent>() 
-		{
-            @Override public void handle(ActionEvent e) 
-            {
-            	Logger.logMsg(Logger.INFO, "Bouton Suivie Activer");
-            	VueChatPrive.getInstance().getControleur().actionOuvrirChatPrive(VueChatPrive.getInstance());
-            }
-        });
-		
-		Button actionStatistiques = (Button) lookup("#btn-statistiques");
-		actionStatistiques.setOnAction(new EventHandler<ActionEvent>() 
-		{
-            @Override public void handle(ActionEvent e) 
-            {
-            	Logger.logMsg(Logger.INFO, "Bouton Suivie Activer");
-            	VueStatistiques.getInstance().getControleur().actionOuvrirStatistiques(VueStatistiques.getInstance());
-            }
-        });*/
 	}
 
 }
