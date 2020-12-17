@@ -5,10 +5,12 @@ import java.util.List;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import controleur.Controleur;
+import donnee.SalonDAO;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
+import modele.Salon;
 
 public class VueSalons extends Vue{
 
@@ -21,6 +23,7 @@ public class VueSalons extends Vue{
 		super("vue_salons.fxml");
 		super.controleur = this.controleur = new Controleur();
 		Logger.logMsg(Logger.INFO, "new VueAcceuil()");
+		
 	}
 	
 	public Controleur getControleur() {return this.controleur;}
@@ -70,36 +73,32 @@ public class VueSalons extends Vue{
 		
 	}
 	
-	/*public void afficherSalons(List<Salon> salons)
+	public void afficherSalons(List<Salon> salons)
 	{
 		
 		Logger.logMsg(Logger.INFO,"VueSalons.afficherSalons");
 
 		Pane listPane = (Pane)lookup("#liste"); 
-		if(!listPane.getChildren().isEmpty()) 
-        {
-			listPane.getChildren().clear();
-        }
         
         int position = 1;
         for(Salon salon:salons) 
         {	
         	Button btnSalon = (Button)lookup("#salon-" + position);
-			btnSalon.setText(salon.getNom());
+			btnSalon.setText(salon.getTitre());
 			btnSalon.setId(salon.getId()+""); // l'id est changé mais on n'a plus besoin de recuperer l'objet
 			
 			btnSalon.setOnAction(new EventHandler<ActionEvent>() 
 			{
 	            @Override public void handle(ActionEvent e) 
 	            {
-	            	Logger.logMsg(Logger.INFO, "Bouton Collection active");
+	            	Logger.logMsg(Logger.INFO, "Bouton Salon active");
 	            	Button bouton = (Button)e.getSource();
-	            	//controleur.actionOuvrirSalon(Integer.parseInt(bouton.getId()));
+	            	controleur.actionOuvrirSalon(Integer.parseInt(bouton.getId()));
 	            }
 	        });
 
 			position++;
         }
 
-	}*/
+	}
 }

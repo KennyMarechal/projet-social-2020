@@ -28,6 +28,7 @@ public class Controleur {
 		//return VueChatPrive.getInstance();
 		
 		tests();
+		VueSalons.getInstance().afficherSalons(SalonDAO.getInstance().getListe());
 		
 		return VueSalons.getInstance();
 	}
@@ -63,18 +64,26 @@ public class Controleur {
 	public void actionOuvrirListeSalons(VueSalons instance) 
 	{
 		//TODO Appeler les fonction d'affichage de ta vue avant quel s'affiche
-		
+		SalonDAO salonDAO = new SalonDAO();
+		instance.afficherSalons(salonDAO.getListe());
 		Navigateur.getInstance().afficherVue(instance);
 	}
 
-	/*public void actionOuvrirSalon(int id) {
+	public void actionOuvrirSalon(int id) {
 		switch(id) {
 		case 1:
+			Fenetre.getInstance().afficherVue(VueAccueil.getInstance());
+			break;
+			
+		case 2:
 			Fenetre.getInstance().afficherVue(VueChatPrive.getInstance());
 			break;
 			
+		case 4:
+			Fenetre.getInstance().afficherVue(VueStatistiques.getInstance());
+			break;
 		}
-	}*/
+	}
 	
 	private static void tests() {
 		
