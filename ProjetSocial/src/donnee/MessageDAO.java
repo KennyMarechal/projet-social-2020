@@ -28,7 +28,7 @@ public class MessageDAO {
 			connection.setRequestMethod("POST");
 			
 			OutputStream fluxEcriture = connection.getOutputStream();
-			OutputStreamWriter envoyeur = new OutputStreamWriter(fluxEcriture);	
+			OutputStreamWriter envoyeur = new OutputStreamWriter(fluxEcriture, "UTF-8");	
 			
 			envoyeur.write("id=" + message.getId() 
 							+ "&moment=" + message.getMoment()
@@ -39,7 +39,7 @@ public class MessageDAO {
 			envoyeur.close();
 
 			
-			//Récupération de la réponse du serveur
+			//Rï¿½cupï¿½ration de la rï¿½ponse du serveur
 			int codeReponse = connection.getResponseCode();
 			InputStream fluxLecture = connection.getInputStream();
 			Scanner lecteur = new Scanner(fluxLecture);
