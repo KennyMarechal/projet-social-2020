@@ -86,7 +86,7 @@ public class VueStatistiques extends Vue{
         });*/
 	}
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({"rawtypes", "unchecked" })
 	public void afficherPageStatistique(PageStatistique page) 
 	{
 		//Afficher le graphique
@@ -103,14 +103,11 @@ public class VueStatistiques extends Vue{
 		chart.setTitle("Message par heure durant les 12 dernières heures");
 		
 		List<StatistiqueUtilisateur> listeUtilisateur = page.getListeStatistiqueUtilisateur();
+		
+		int heureminimale = page.getHeureMinimale();
 		for (StatistiqueUtilisateur utilisateur : listeUtilisateur) {	
-			XYChart.Series serie = new XYChart.Series();
+			XYChart.Series serie = transformerListeStatistiqueEnSerie(utilisateur.getListeStatistique(), heureminimale);
 			serie.setName(utilisateur.getNom());
-			
-			List<HashMap<String, Integer>> listeStatistiques = utilisateur.getListeStatistique();
-			for (HashMap<String, Integer> statistique : listeStatistiques) {
-				serie.getData().add(new XYChart.Data<>(statistique.get("heure") + "h00", statistique.get("frequence")));
-			}
 			chart.getData().add(serie);
 		}
 		
@@ -121,5 +118,27 @@ public class VueStatistiques extends Vue{
 		//Afficher la statistique personelle (Nombre total de messages depuis 12h)
 		Label labelNombreMessages = (Label) lookup("#vue-statistique-nombre-messages");
 		labelNombreMessages.setText(page.getStatistiquePersonelle() + "");
+	}
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	private XYChart.Series transformerListeStatistiqueEnSerie(List<HashMap<String, Integer>> listeStatistiques, int heureminimale) {
+		XYChart.Series serie = new XYChart.Series();
+		for (int i = 0; i < 13; i++) {
+			int j = i + heureminimale;
+			if (j >= 24) j -= 24;
+			
+			int frequence = 0;
+			
+			for (HashMap<String, Integer> statistique : listeStatistiques) {
+				if (statistique.get("heure") == j)
+					frequence = statistique.get("frequence");
+			}
+			
+			if (j < 10)
+				serie.getData().add(new XYChart.Data<>("0" + j + "h00", frequence));
+			else 
+				serie.getData().add(new XYChart.Data<>(j + "h00", frequence));
+		}
+		return serie;
 	}
 }

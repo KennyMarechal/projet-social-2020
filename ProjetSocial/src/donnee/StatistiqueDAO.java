@@ -39,8 +39,9 @@ public class StatistiqueDAO {
 		if (document == null) return null;
 		
 		List<StatistiqueUtilisateur> listeStatistiqueUtilisateur = new ArrayList<StatistiqueUtilisateur>();
-		int statistiquePersonelle = Integer.parseInt(document.getElementsByTagName("statistiqueMessage").item(0).getTextContent());
+		int heureMinimale = Integer.parseInt(document.getElementsByTagName("heureMinimale").item(0).getTextContent());
 		int valeurGraphiqueMaximale = Integer.parseInt(document.getElementsByTagName("valeurGraphiqueMaximale").item(0).getTextContent());
+		int statistiquePersonelle = Integer.parseInt(document.getElementsByTagName("statistiqueMessage").item(0).getTextContent());
 		
 		NodeList listeUtilisateurs = document.getElementsByTagName("listeStatistiqueUtilisateur").item(0).getChildNodes();
 		for (int i=0; i < listeUtilisateurs.getLength(); i++) {
@@ -49,7 +50,7 @@ public class StatistiqueDAO {
 				listeStatistiqueUtilisateur.add(recupererStatistiqueUtilisateur(utilisateur));
 			}
 		}
-		return new PageStatistique(listeStatistiqueUtilisateur, valeurGraphiqueMaximale, statistiquePersonelle);
+		return new PageStatistique(listeStatistiqueUtilisateur, heureMinimale, valeurGraphiqueMaximale, statistiquePersonelle);
 	}
 	
 	private StatistiqueUtilisateur recupererStatistiqueUtilisateur(Node utilisateur) {
