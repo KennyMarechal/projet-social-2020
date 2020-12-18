@@ -96,17 +96,12 @@
                   <Font name="System Bold" size="39.0" />
                </font>
             </Label>
-            <Label layoutX="30.0" layoutY="100.0" text="Nombre de messages que vous avez envoyés dans les 12 dernières heures :" wrapText="true">
+            <Label id="vue-statistique-nombre-messages" layoutX="40.0" layoutY="95.0" text="Nombre de messages que vous avez envoyés dans les 12 dernières heures :" wrapText="true">
                <font>
-                  <Font size="16.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
-            <Label id="vue-statistique-nombre-messages" layoutX="571.0" layoutY="90.0" textAlignment="CENTER">
-               <font>
-                  <Font name="System Bold" size="30.0" />
-               </font>
-            </Label>
-            <Pane id="vue-statistique-pane" layoutX="28.0" layoutY="152.0" prefHeight="440.0" prefWidth="1040.0" />
+            <Pane id="vue-statistique-pane" layoutX="28.0" layoutY="132.0" prefHeight="460.0" prefWidth="1040.0" />
          </children>
       </Pane>
    </children>

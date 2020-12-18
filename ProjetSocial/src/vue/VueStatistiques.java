@@ -97,7 +97,7 @@ public class VueStatistiques extends Vue{
 		CategoryAxis xAxis = new CategoryAxis();
 		xAxis.setLabel("heures");
 		NumberAxis yAxis = new NumberAxis(0, page.getValeurGraphiqueMaximale() + 1, 1);
-		yAxis.setLabel("frequence");
+		yAxis.setLabel("Nombre de messages");
 		
 		LineChart<String, Number> chart = new LineChart<String, Number>(xAxis, yAxis);
 		chart.setTitle("Message par heure durant les 12 dernières heures");
@@ -117,13 +117,13 @@ public class VueStatistiques extends Vue{
 		
 		//Afficher la statistique personelle (Nombre total de messages depuis 12h)
 		Label labelNombreMessages = (Label) lookup("#vue-statistique-nombre-messages");
-		labelNombreMessages.setText(page.getStatistiquePersonelle() + "");
+		labelNombreMessages.setText("Nombre de messages que vous avez envoyés dans les 12 dernières heures :  " + page.getStatistiquePersonelle());
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	private XYChart.Series transformerListeStatistiqueEnSerie(List<HashMap<String, Integer>> listeStatistiques, int heureminimale) {
 		XYChart.Series serie = new XYChart.Series();
-		for (int i = 0; i < 13; i++) {
+		for (int i = 0; i < 12; i++) {
 			int j = i + heureminimale;
 			if (j >= 24) j -= 24;
 			
