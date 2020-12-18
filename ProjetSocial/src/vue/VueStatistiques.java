@@ -130,8 +130,10 @@ public class VueStatistiques extends Vue{
 			int frequence = 0;
 			
 			for (HashMap<String, Integer> statistique : listeStatistiques) {
-				if (statistique.get("heure") == j)
+				if (statistique.get("heure") == j) {
 					frequence = statistique.get("frequence");
+					break;
+				}
 			}
 			
 			if (j < 10)
