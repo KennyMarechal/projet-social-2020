@@ -40,6 +40,7 @@ public class StatistiqueDAO {
 		
 		List<StatistiqueUtilisateur> listeStatistiqueUtilisateur = new ArrayList<StatistiqueUtilisateur>();
 		int statistiquePersonelle = Integer.parseInt(document.getElementsByTagName("statistiqueMessage").item(0).getTextContent());
+		int valeurGraphiqueMaximale = Integer.parseInt(document.getElementsByTagName("valeurGraphiqueMaximale").item(0).getTextContent());
 		
 		NodeList listeUtilisateurs = document.getElementsByTagName("listeStatistiqueUtilisateur").item(0).getChildNodes();
 		for (int i=0; i < listeUtilisateurs.getLength(); i++) {
@@ -48,7 +49,7 @@ public class StatistiqueDAO {
 				listeStatistiqueUtilisateur.add(recupererStatistiqueUtilisateur(utilisateur));
 			}
 		}
-		return new PageStatistique(listeStatistiqueUtilisateur, statistiquePersonelle);
+		return new PageStatistique(listeStatistiqueUtilisateur, valeurGraphiqueMaximale, statistiquePersonelle);
 	}
 	
 	private StatistiqueUtilisateur recupererStatistiqueUtilisateur(Node utilisateur) {

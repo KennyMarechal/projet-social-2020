@@ -5,6 +5,7 @@ import java.util.List;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import donnee.SalonDAO;
+import donnee.StatistiqueDAO;
 import modele.Salon;
 import vue.Fenetre;
 import vue.Navigateur;
@@ -55,8 +56,7 @@ public class Controleur {
 
 	public void actionOuvrirStatistiques(VueStatistiques instance) 
 	{
-		//TODO Appeler les fonction d'affichage de ta vue avant quel s'affiche
-		
+		instance.afficherPageStatistique(StatistiqueDAO.getInstance().getPage());
 		Navigateur.getInstance().afficherVue(instance);
 	}
 
