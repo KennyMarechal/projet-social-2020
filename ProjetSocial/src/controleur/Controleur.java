@@ -60,6 +60,12 @@ public class Controleur {
 		instance.afficherPageStatistique(StatistiqueDAO.getInstance().getPage());
 		Navigateur.getInstance().afficherVue(instance);
 	}
+	
+	public void actionRafraichirPageStatistiques(VueStatistiques instance) 
+	{
+		StatistiqueDAO.getInstance().rafraichir();
+		actionOuvrirStatistiques(instance);
+	}
 
 	public void actionOuvrirListeSalons(VueSalons instance) 
 	{

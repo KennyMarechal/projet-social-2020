@@ -6,6 +6,7 @@ import java.util.List;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import controleur.Controleur;
+import donnee.StatistiqueDAO;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.chart.CategoryAxis;
@@ -34,6 +35,19 @@ public class VueStatistiques extends Vue{
 	
 	public void activerControles(){
 		super.activerControles();
+		
+		
+		
+		
+		Button actionRafraichir = (Button) lookup("#vue-statistique-button-rafraichir");
+		actionRafraichir.setOnAction(new EventHandler<ActionEvent>() 
+		{
+            @Override public void handle(ActionEvent e) 
+            {
+            	Logger.logMsg(Logger.INFO, "Bouton Rafraichir-Statistiques Activer");
+            	VueAccueil.getInstance().getControleur().actionRafraichirPageStatistiques(getInstance());
+            }
+        });
 		
 		Button actionAccueil = (Button) lookup("#btn-accueil");
 		actionAccueil.setOnAction(new EventHandler<ActionEvent>() 

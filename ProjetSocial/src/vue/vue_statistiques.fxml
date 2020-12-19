@@ -102,6 +102,11 @@
                </font>
             </Label>
             <Pane id="vue-statistique-pane" layoutX="28.0" layoutY="132.0" prefHeight="460.0" prefWidth="1040.0" />
+            <Button id="vue-statistique-button-rafraichir" layoutX="10.0" layoutY="9.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="36.0" text="⟳">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </children>
