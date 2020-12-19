@@ -8,13 +8,23 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
+
 import modele.Message;
 
 
 public class MessageDAO {
 	
 	public static final String URL_AJOUTER_MESSAGE = "https://social.tikenix.me/AjouterMessage.php";
+	public static final String URL_LISTER_MESSAGE = "https://social.tikenix.me/ListeMesage.php";
 	
+	private static MessageDAO instance;
+	public static MessageDAO getInstance() {
+		if (instance == null)
+			instance = new MessageDAO();
+		
+		return instance;
+	}
+
 	XmlDAO decodeurXML = new XmlDAO();
 	
 	public void envoyerMessage(Message message)
@@ -38,8 +48,6 @@ public class MessageDAO {
 			);
 			envoyeur.close();
 
-			
-			//R�cup�ration de la r�ponse du serveur
 			int codeReponse = connection.getResponseCode();
 			InputStream fluxLecture = connection.getInputStream();
 			Scanner lecteur = new Scanner(fluxLecture);

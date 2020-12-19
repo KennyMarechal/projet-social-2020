@@ -4,8 +4,10 @@ import java.util.List;
 
 import com.sun.media.jfxmedia.logging.Logger;
 
+import donnee.MessageDAO;
 import donnee.SalonDAO;
 import donnee.StatistiqueDAO;
+import modele.Message;
 import modele.Salon;
 import vue.Fenetre;
 import vue.Navigateur;
@@ -42,8 +44,7 @@ public class Controleur {
 
 	public void actionOuvrirChatPrive(VueChatPrive instance) 
 	{
-		//TODO Appeler les fonction d'affichage de ta vue avant quel s'affiche
-		
+		//instance.afficherMessages(Salon)
 		Navigateur.getInstance().afficherVue(instance);
 	}
 
@@ -79,5 +80,12 @@ public class Controleur {
 	private static void tests() {
 		
 		List<Salon> listeMois = SalonDAO.getInstance().getListe();
-		System.out.println((listeMois.get(0)).getTitre());	}
+		System.out.println((listeMois.get(0)).getTitre());	
+	}
+
+	public void notifierEnvoiMessage(Message message)
+	{
+		message.setUtilisateur_id(2); //TODO Utiliser le USER_ID global
+		MessageDAO.getInstance().envoyerMessage(message);		
+	}
 }
