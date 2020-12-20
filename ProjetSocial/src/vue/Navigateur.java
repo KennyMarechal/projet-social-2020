@@ -17,7 +17,6 @@ public abstract class Navigateur extends Application{ // Application de javafx e
 		//TODO instance de toutes les vues et la navigation
 		instance = this;
 		Logger.setLevel(Logger.INFO);
-		VueAccueil.getInstance().activerControles();
 		VueChatPrive.getInstance().activerControles();
 		VueSalons.getInstance().activerControles();
 		VueStatistiques.getInstance().activerControles();

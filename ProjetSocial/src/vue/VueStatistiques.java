@@ -87,6 +87,8 @@ public class VueStatistiques extends Vue{
             	Logger.logMsg(Logger.INFO, "Bouton Suivie Activer");
             	VueParametre.getInstance().getControleur().actionOuvrirParametre(VueParametre.getInstance());
             }
+<<<<<<< HEAD
+=======
         });
 		
 		/*Button actionStatistiques = (Button) lookup("#btn-statistiques");
@@ -97,6 +99,7 @@ public class VueStatistiques extends Vue{
             	Logger.logMsg(Logger.INFO, "Bouton Suivie Activer");
             	VueStatistiques.getInstance().getControleur().actionOuvrirStatistiques(VueStatistiques.getInstance());
             }
+>>>>>>> 81485bbc44613f1352832f3932b91d41b8224780
         });*/
 	}
 	

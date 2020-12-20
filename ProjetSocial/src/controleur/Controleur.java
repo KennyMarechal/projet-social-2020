@@ -12,7 +12,6 @@ import modele.Salon;
 import vue.Fenetre;
 import vue.Navigateur;
 import vue.Vue;
-import vue.VueAccueil;
 import vue.VueChatPrive;
 import vue.VueParametre;
 import vue.VueSalons;
@@ -25,22 +24,12 @@ public class Controleur {
 	}
 	
 	public static Vue selectionnerVuePrincipale() { 
-		/*La vue principale c'est la vue qui comporte les listes*/
-		//return VueAccueil.getInstance();
-		//return VueParametre.getInstance();
-		//return VueChatPrive.getInstance();
 		
 		tests();
 		
 		return VueSalons.getInstance();
 	}
 
-	public void actionOuvrirAccueil(VueAccueil instance) 
-	{
-		//TODO Appeler les fonction d'affichage de ta vue avant quel s'affiche
-		
-		Navigateur.getInstance().afficherVue(instance);
-	}
 
 	public void actionOuvrirChatPrive(VueChatPrive instance) 
 	{
@@ -77,9 +66,28 @@ public class Controleur {
 	/*public void actionOuvrirSalon(int id) {
 		switch(id) {
 		case 1:
+<<<<<<< Updated upstream
 			Fenetre.getInstance().afficherVue(VueChatPrive.getInstance());
 			break;
 			
+=======
+<<<<<<< HEAD
+			Fenetre.getInstance().afficherVue(VueChatPublic.getInstance());
+			break;
+			
+		case 2:
+			Fenetre.getInstance().afficherVue(VueChatPrive.getInstance());
+			break;
+			
+		case 3:
+			Fenetre.getInstance().afficherVue(VueStatistiques.getInstance());
+			break;
+=======
+			Fenetre.getInstance().afficherVue(VueChatPrive.getInstance());
+			break;
+			
+>>>>>>> 81485bbc44613f1352832f3932b91d41b8224780
+>>>>>>> Stashed changes
 		}
 	}*/
 	

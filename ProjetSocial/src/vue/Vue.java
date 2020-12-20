@@ -29,7 +29,7 @@ public class Vue extends Scene {
 	public static Parent parser(String fxml, Controleur controleur)
 	{
 		parseur = new FXMLLoader();
-		parseur.setLocation(VueAccueil.class.getResource(fxml)); 
+		parseur.setLocation(VueSalons.class.getResource(fxml)); // J'ai changer car VueAccueil n'éxiste plus c'est la VueSalons qui devient l'accueil
 		if(null != controleur) parseur.setController(controleur);
 		try {
 			return parseur.load();

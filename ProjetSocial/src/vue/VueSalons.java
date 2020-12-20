@@ -28,15 +28,15 @@ public class VueSalons extends Vue{
 	public void activerControles(){
 		super.activerControles();
 		
-		Button actionAccueil = (Button) lookup("#btn-accueil");
-		actionAccueil.setOnAction(new EventHandler<ActionEvent>() 
+		/*Button actionChatPublic = (Button) lookup("#btn-ChatPublic");
+		actionChatPublic.setOnAction(new EventHandler<ActionEvent>() 
 		{
             @Override public void handle(ActionEvent e) 
             {
-            	Logger.logMsg(Logger.INFO, "Bouton Accueil Activer");
-            	VueAccueil.getInstance().getControleur().actionOuvrirAccueil(VueAccueil.getInstance());
+            	Logger.logMsg(Logger.INFO, "Bouton Chat public Activer");
+            	//VueChatPublic.getInstance()
             }
-        });
+        });*/
 		
 		Button actionChatPrive = (Button) lookup("#btn-chat");
 		actionChatPrive.setOnAction(new EventHandler<ActionEvent>() 
