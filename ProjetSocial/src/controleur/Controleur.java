@@ -67,10 +67,13 @@ public class Controleur {
 		switch(id) {
 		case 1:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			Fenetre.getInstance().afficherVue(VueChatPrive.getInstance());
 			break;
 			
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 			Fenetre.getInstance().afficherVue(VueChatPublic.getInstance());
 			break;
@@ -87,6 +90,9 @@ public class Controleur {
 			break;
 			
 >>>>>>> 81485bbc44613f1352832f3932b91d41b8224780
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 		}
 	}*/
