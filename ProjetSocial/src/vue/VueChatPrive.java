@@ -51,6 +51,15 @@ public class VueChatPrive extends Vue{
             }
         });
 		
+		Button actionChatPublic = (Button) lookup("#btn-ChatPublic");
+		actionChatPublic.setOnAction(new EventHandler<ActionEvent>() 
+		{
+            @Override public void handle(ActionEvent e) 
+            {
+            	Logger.logMsg(Logger.INFO, "Bouton Chat public Activer");
+            	VueChatPublic.getInstance().getControleur().actionOuvrirChatPublic(VueChatPublic.getInstance());
+            }
+        });
 		
 		Button actionParametre = (Button) lookup("#btn-parametres");
 		actionParametre.setOnAction(new EventHandler<ActionEvent>() 

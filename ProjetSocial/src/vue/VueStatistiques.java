@@ -36,6 +36,16 @@ public class VueStatistiques extends Vue{
 	public void activerControles(){
 		super.activerControles();
 
+		Button actionChatPublic = (Button) lookup("#btn-ChatPublic");
+		actionChatPublic.setOnAction(new EventHandler<ActionEvent>() 
+		{
+            @Override public void handle(ActionEvent e) 
+            {
+            	Logger.logMsg(Logger.INFO, "Bouton Chat public Activer");
+            	VueChatPublic.getInstance().getControleur().actionOuvrirChatPublic(VueChatPublic.getInstance());
+            }
+        });
+		
 		Button actionRafraichir = (Button) lookup("#vue-statistique-button-rafraichir");
 		actionRafraichir.setOnAction(new EventHandler<ActionEvent>() 
 		{
