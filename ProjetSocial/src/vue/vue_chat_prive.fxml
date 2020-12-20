@@ -124,10 +124,13 @@
       </VBox>
       <Pane layoutX="121.0" layoutY="126.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="1173.0" style="-fx-background-color: white;" stylesheets="@decoration/style.css" AnchorPane.leftAnchor="121.0" AnchorPane.topAnchor="126.0">
          <children>
-            <ScrollPane id="panneau-messages" layoutX="55.0" layoutY="67.0" prefHeight="396.0" prefWidth="1063.0">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-              </content>
+            <ScrollPane id="panneau-messages" hbarPolicy="NEVER" layoutX="55.0" layoutY="67.0" pannable="true" prefHeight="396.0" prefWidth="1063.0" vbarPolicy="NEVER">
+               <content>
+                  <VBox id="vb-messages" prefHeight="500.0" prefWidth="1059.0" spacing="10.0">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding></VBox>
+               </content>
             </ScrollPane>
             <Pane prefHeight="67.0" prefWidth="1173.0" style="-fx-background-color: #bbbbbb;">
                <children>

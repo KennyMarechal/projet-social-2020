@@ -9,7 +9,6 @@ import donnee.SalonDAO;
 import donnee.StatistiqueDAO;
 import modele.Message;
 import modele.Salon;
-import vue.Fenetre;
 import vue.Navigateur;
 import vue.Vue;
 import vue.VueChatPrive;

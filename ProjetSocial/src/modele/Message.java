@@ -6,10 +6,22 @@ public class Message {
 	
 	protected int id;
 	protected Timestamp moment;
-	protected String text;
+	protected String texte;
 	protected int salon_id;
 	protected int utilisateur_id;
+
+	// L'ID et le timestamp doivent être d'finis côté base de données
+	public Message(int id, Timestamp moment, String texte, int salon_id, int utilisateur_id)
+	{
+		this.id = id;
+		this.moment = moment;
+		this.texte = texte;
+		this.salon_id = salon_id;
+		this.utilisateur_id = utilisateur_id;
+	}
 	
+	public Message(){}
+
 	public int getId() {
 		return id;
 	}
@@ -23,10 +35,10 @@ public class Message {
 		this.moment = moment;
 	}
 	public String getText() {
-		return text;
+		return texte;
 	}
-	public void setText(String text) {
-		this.text = text;
+	public void setText(String texte) {
+		this.texte = texte;
 	}
 	public int getSalon_id() {
 		return salon_id;

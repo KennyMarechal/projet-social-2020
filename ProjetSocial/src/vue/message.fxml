@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="404.0" style="-fx-background-color: #68aded;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="TOP_LEFT" layoutX="12.0" layoutY="12.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="76.0" prefWidth="375.0" text="{texte-message}" wrapText="true">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
