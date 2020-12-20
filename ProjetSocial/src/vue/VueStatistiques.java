@@ -42,7 +42,7 @@ public class VueStatistiques extends Vue{
             @Override public void handle(ActionEvent e) 
             {
             	Logger.logMsg(Logger.INFO, "Bouton Rafraichir-Statistiques Activer");
-            	//VueAccueil.getInstance().getControleur().actionRafraichirPageStatistiques(getInstance());
+            	getControleur().actionRafraichirPageStatistiques(getInstance());
             }
         });
 		
