@@ -35,27 +35,14 @@ public class VueStatistiques extends Vue{
 	
 	public void activerControles(){
 		super.activerControles();
-		
-		
-		
-		
+
 		Button actionRafraichir = (Button) lookup("#vue-statistique-button-rafraichir");
 		actionRafraichir.setOnAction(new EventHandler<ActionEvent>() 
 		{
             @Override public void handle(ActionEvent e) 
             {
             	Logger.logMsg(Logger.INFO, "Bouton Rafraichir-Statistiques Activer");
-            	VueAccueil.getInstance().getControleur().actionRafraichirPageStatistiques(getInstance());
-            }
-        });
-		
-		Button actionAccueil = (Button) lookup("#btn-accueil");
-		actionAccueil.setOnAction(new EventHandler<ActionEvent>() 
-		{
-            @Override public void handle(ActionEvent e) 
-            {
-            	Logger.logMsg(Logger.INFO, "Bouton Accueil Activer");
-            	VueAccueil.getInstance().getControleur().actionOuvrirAccueil(VueAccueil.getInstance());
+            	//VueAccueil.getInstance().getControleur().actionRafraichirPageStatistiques(getInstance());
             }
         });
 		
@@ -87,8 +74,7 @@ public class VueStatistiques extends Vue{
             	Logger.logMsg(Logger.INFO, "Bouton Suivie Activer");
             	VueParametre.getInstance().getControleur().actionOuvrirParametre(VueParametre.getInstance());
             }
-<<<<<<< HEAD
-=======
+
         });
 		
 		/*Button actionStatistiques = (Button) lookup("#btn-statistiques");
@@ -99,7 +85,6 @@ public class VueStatistiques extends Vue{
             	Logger.logMsg(Logger.INFO, "Bouton Suivie Activer");
             	VueStatistiques.getInstance().getControleur().actionOuvrirStatistiques(VueStatistiques.getInstance());
             }
->>>>>>> 81485bbc44613f1352832f3932b91d41b8224780
         });*/
 	}
 	

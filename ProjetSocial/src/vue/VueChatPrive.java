@@ -31,14 +31,6 @@ public class VueChatPrive extends Vue{
 		super.activerControles();
 	
 		//Boutons généraux
-		Button actionAccueil = (Button) lookup("#btn-accueil");
-		actionAccueil.setOnAction(new EventHandler<ActionEvent>() 
-		{
-            @Override public void handle(ActionEvent e) 
-            {
-            	VueAccueil.getInstance().getControleur().actionOuvrirAccueil(VueAccueil.getInstance());
-            }
-        });
 		
 		Button actionListeSalon = (Button) lookup("#btn-salons");
 		actionListeSalon.setOnAction(new EventHandler<ActionEvent>() 
