@@ -12,6 +12,7 @@ import modele.Salon;
 import vue.Navigateur;
 import vue.Vue;
 import vue.VueChatPrive;
+import vue.VueChatPublic;
 import vue.VueParametre;
 import vue.VueSalons;
 import vue.VueStatistiques;
@@ -33,6 +34,10 @@ public class Controleur {
 	public void actionOuvrirChatPrive(VueChatPrive instance) 
 	{
 		//instance.afficherMessages(Salon)
+		Navigateur.getInstance().afficherVue(instance);
+	}
+	
+	public void actionOuvrirChatPublic(VueChatPublic instance) {
 		Navigateur.getInstance().afficherVue(instance);
 	}
 

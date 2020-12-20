@@ -21,6 +21,7 @@ public abstract class Navigateur extends Application{ // Application de javafx e
 		VueSalons.getInstance().activerControles();
 		VueStatistiques.getInstance().activerControles();
 		VueParametre.getInstance().activerControles();
+		VueChatPublic.getInstance().activerControles();
 	}
 	
 	public void afficherVue(Vue vue)
