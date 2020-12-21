@@ -3,9 +3,9 @@
 Application de chat avec:
 - un salon de chat collectif
 - un chat privé entre 2 personnes
-- un écran de statistiques (donnée à déterminer)
+- un écran de statistiques (messages envoyés dans les 12 dernières heures)
 - un écran d'options (par exemple un mode nuit)
-- un écran supplémentaire comme la liste des salons disponibles
+- un écran de liste de salons disponibles
 
 
 ## Particpants
@@ -15,3 +15,7 @@ Application de chat avec:
 *Guillaume Vernaz*\
 *Hy-Vong Georges Dit Rap*\
 *Maxime Daigle Vigneault*
+
+## Rapport de projet
+
+Le rapport de projet est disponible pour modification sur [Drive](https://docs.google.com/presentation/d/1FAU9r3Qsa1U-WP5mD62ReeaGiqSrATT-Q9iI1ar1BR0/edit?usp=sharing)
