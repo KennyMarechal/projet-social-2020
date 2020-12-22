@@ -6,7 +6,7 @@
 		function getGraphiqueStatistiqueParClient($idClient)
 		{
 			$LISTERSTATISTIQUES = "SELECT pseudo, utilisateur_id, heure, frequence, heureminimale
-			From genererStatistiqueDeUtilisateurID($idClient);";
+			From genererStatistiqueDeUtilisateurID(:idClient);";
 			$requete = BaseDeDonnees::getConnection()->prepare($LISTERSTATISTIQUES);
 			$requete->bindParam(':idClient', $idClient, PDO::PARAM_INT);
 			$requete->execute();
