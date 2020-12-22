@@ -19,3 +19,10 @@ Application de chat avec:
 ## Rapport de projet
 
 Le rapport de projet est disponible pour modification sur [Drive](https://docs.google.com/presentation/d/1FAU9r3Qsa1U-WP5mD62ReeaGiqSrATT-Q9iI1ar1BR0/edit?usp=sharing)
+
+
+## lien des differents services 
+- https://social.tikenix.me/AjouterMessage.php
+- https://social.tikenix.me/ListeSalonParUtilisateurId.php?utilisateur=1
+- https://social.tikenix.me/ListeMesage.php
+- https://social.tikenix.me/ListeSalon.php
