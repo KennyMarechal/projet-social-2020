@@ -19,17 +19,20 @@ import vue.VueParametre;
 import vue.VueSalons;
 import vue.VueStatistiques;
 
-public class Controleur {
+public class Controleur 
+{
+	public final static int USER_ID = 1;
+	public final static String BLEU_MESSAGE = "#68aded";
+	public final static String GRIS_MESSAGE = "#c9c9c9";
 	
 	public Controleur() {
 		Logger.logMsg(Logger.INFO, "new Controleur()");
 	}
-	
-	public static Vue selectionnerVuePrincipale() { 
 		
+	public static Vue selectionnerVuePrincipale() 
+	{ 	
 		JedisMain jedisMain = new JedisMain();
 		VueSalons.getInstance().afficherSalons(jedisMain.getCache());
-		
 		return VueSalons.getInstance();
 	}
 
@@ -45,9 +48,7 @@ public class Controleur {
 	}
 
 	public void actionOuvrirParametre(VueParametre instance) 
-	{
-		//TODO Appeler les fonction d'affichage de ta vue avant quel s'affiche
-		
+	{		
 		Navigateur.getInstance().afficherVue(instance);
 	}
 
@@ -64,16 +65,13 @@ public class Controleur {
 	}
 
 	public void actionOuvrirListeSalons(VueSalons instance) 
-	{
-		//TODO Appeler les fonction d'affichage de ta vue avant quel s'affiche
-		
+	{		
 		Navigateur.getInstance().afficherVue(instance);
 	}
 
 	public void actionOuvrirSalon(int id) {
 		switch(id) {
 		case 1:
-
 			Fenetre.getInstance().afficherVue(VueStatistiques.getInstance());
 			break;
 			
@@ -96,7 +94,7 @@ public class Controleur {
 
 	public void notifierEnvoiMessage(Message message)
 	{
-		message.setUtilisateur_id(2); //TODO Utiliser le USER_ID global
+		message.setUtilisateur_id(USER_ID);
 		MessageDAO.getInstance().envoyerMessage(message);		
 	}
 }

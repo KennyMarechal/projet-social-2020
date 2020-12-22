@@ -2,7 +2,6 @@ package vue;
 
 import java.io.IOException;
 import java.sql.Timestamp;
-import java.text.NumberFormat.Style;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +14,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.NodeOrientation;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
@@ -120,17 +118,13 @@ public class VueChatPrive extends Vue{
 		message.setMoment(new Timestamp(System.currentTimeMillis())); //TODO Laisser le service de données gérer le moment
 		message.setSalon_id(2);	//TODO Changer le salon dynamiquement selon la liste de salon dans le constructeur
 		message.setText(champMessage.getText());
-		message.setUtilisateur_id(2);//TODO Utiliser un utilisateur global
+		message.setUtilisateur_id(Controleur.USER_ID);
 		
 		//this.getControleur().notifierEnvoiMessage(message);
 	}
 	
 	private void afficherMessages(List<Message> messages) throws IOException
-	{
-		final int USER_ID = 2;
-		final String bleuMessage = "#68aded";
-		final String grisMessage = "#c9c9c9";
-		
+	{			
 		VBox vbMessages = (VBox) lookup("#vb-messages");
 		for (Message message : messages)
 		{			
@@ -139,15 +133,15 @@ public class VueChatPrive extends Vue{
 			conteneurMessage.setPrefHeight(panneauMessage.getPrefHeight());
 
 			//Affichage différent selon l'utilisateur qui a écrit le message
-			if(message.getUtilisateur_id() == USER_ID)
+			if(message.getUtilisateur_id() == Controleur.USER_ID)
 			{
 				conteneurMessage.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
-				panneauMessage.setStyle("-fx-background-color: " + bleuMessage);
+				panneauMessage.setStyle("-fx-background-color: " + Controleur.BLEU_MESSAGE);
 			}
 			else
 			{
 				conteneurMessage.setNodeOrientation(NodeOrientation.LEFT_TO_RIGHT);
-				panneauMessage.setStyle("-fx-background-color: " + grisMessage);
+				panneauMessage.setStyle("-fx-background-color: " + Controleur.GRIS_MESSAGE);
 			}
 			Label texteMessage = (Label) panneauMessage.getChildren().get(0);
 			texteMessage.setText(message.getText());
