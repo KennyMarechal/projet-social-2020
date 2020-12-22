@@ -9,12 +9,13 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import controleur.Controleur;
 import modele.PageStatistique;
 import modele.Salon;
 import modele.StatistiqueUtilisateur;
 
 public class StatistiqueDAO {
-	private static final String URL = "https://dvmax.xyz/social/statistique.php?utilisateur=1";
+	private static final String URL = "https://dvmax.xyz/social/statistique.php?utilisateur=" + Controleur.USER_ID;
 	private static final String BALISE_FERMETURE = "</statistiques>";
 	
 	private static final String ID = "id";
