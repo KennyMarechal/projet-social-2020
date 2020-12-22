@@ -9,6 +9,8 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
+import modele.Salon;
+import redis.clients.jedis.Jedis;
 
 public class VueSalons extends Vue{
 
@@ -70,23 +72,18 @@ public class VueSalons extends Vue{
 		
 	}
 	
-	/*public void afficherSalons(List<Salon> salons)
+	public void afficherSalons(List<String> salons)
 	{
-		
 		Logger.logMsg(Logger.INFO,"VueSalons.afficherSalons");
 
 		Pane listPane = (Pane)lookup("#liste"); 
-		if(!listPane.getChildren().isEmpty()) 
-        {
-			listPane.getChildren().clear();
-        }
         
         int position = 1;
-        for(Salon salon:salons) 
+        for(String salon:salons) 
         {	
         	Button btnSalon = (Button)lookup("#salon-" + position);
-			btnSalon.setText(salon.getNom());
-			btnSalon.setId(salon.getId()+""); // l'id est changé mais on n'a plus besoin de recuperer l'objet
+			btnSalon.setText(salon);
+			btnSalon.setId(position +""); // l'id est changé mais on n'a plus besoin de recuperer l'objet
 			
 			btnSalon.setOnAction(new EventHandler<ActionEvent>() 
 			{
@@ -94,12 +91,12 @@ public class VueSalons extends Vue{
 	            {
 	            	Logger.logMsg(Logger.INFO, "Bouton Collection active");
 	            	Button bouton = (Button)e.getSource();
-	            	//controleur.actionOuvrirSalon(Integer.parseInt(bouton.getId()));
+	            	controleur.actionOuvrirSalon(Integer.parseInt(bouton.getId()));
 	            }
 	        });
 
 			position++;
         }
 
-	}*/
+	}
 }

@@ -4,11 +4,13 @@ import java.util.List;
 
 import com.sun.media.jfxmedia.logging.Logger;
 
+import donnee.JedisMain;
 import donnee.MessageDAO;
 import donnee.SalonDAO;
 import donnee.StatistiqueDAO;
 import modele.Message;
 import modele.Salon;
+import vue.Fenetre;
 import vue.Navigateur;
 import vue.Vue;
 import vue.VueChatPrive;
@@ -25,7 +27,8 @@ public class Controleur {
 	
 	public static Vue selectionnerVuePrincipale() { 
 		
-		tests();
+		JedisMain jedisMain = new JedisMain();
+		VueSalons.getInstance().afficherSalons(jedisMain.getCache());
 		
 		return VueSalons.getInstance();
 	}
@@ -67,39 +70,23 @@ public class Controleur {
 		Navigateur.getInstance().afficherVue(instance);
 	}
 
-	/*public void actionOuvrirSalon(int id) {
+	public void actionOuvrirSalon(int id) {
 		switch(id) {
 		case 1:
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-			Fenetre.getInstance().afficherVue(VueChatPrive.getInstance());
-			break;
-			
-=======
-=======
->>>>>>> Stashed changes
-<<<<<<< HEAD
-			Fenetre.getInstance().afficherVue(VueChatPublic.getInstance());
+
+			Fenetre.getInstance().afficherVue(VueStatistiques.getInstance());
 			break;
 			
 		case 2:
-			Fenetre.getInstance().afficherVue(VueChatPrive.getInstance());
+			Fenetre.getInstance().afficherVue(VueChatPublic.getInstance());
 			break;
 			
 		case 3:
-			Fenetre.getInstance().afficherVue(VueStatistiques.getInstance());
-			break;
-=======
 			Fenetre.getInstance().afficherVue(VueChatPrive.getInstance());
 			break;
 			
->>>>>>> 81485bbc44613f1352832f3932b91d41b8224780
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 		}
-	}*/
+	}
 	
 	private static void tests() {
 		
