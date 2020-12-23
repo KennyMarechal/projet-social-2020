@@ -35,7 +35,7 @@ public class XmlDAO {
 	
 	public boolean decoderReponseAction(String xml)
 	{
-		System.out.println("xml" + xml);
+		System.out.println("xml:" + xml);
 		return true;
 	}
 }

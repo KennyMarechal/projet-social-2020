@@ -1,5 +1,6 @@
 package controleur;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.sun.media.jfxmedia.logging.Logger;
@@ -10,7 +11,6 @@ import donnee.SalonDAO;
 import donnee.StatistiqueDAO;
 import modele.Message;
 import modele.Salon;
-import vue.Fenetre;
 import vue.Navigateur;
 import vue.Vue;
 import vue.VueChatPrive;
@@ -21,7 +21,7 @@ import vue.VueStatistiques;
 
 public class Controleur 
 {
-	public final static int USER_ID = 1;
+	public final static int ID_UTILISATEUR = 1;
 	public final static String BLEU_MESSAGE = "#68aded";
 	public final static String GRIS_MESSAGE = "#c9c9c9";
 	
@@ -39,8 +39,8 @@ public class Controleur
 
 	public void actionOuvrirChatPrive(VueChatPrive instance) 
 	{
-		//instance.afficherMessages(Salon)
 		Navigateur.getInstance().afficherVue(instance);
+		//lireMessagesPrives();
 	}
 	
 	public void actionOuvrirChatPublic(VueChatPublic instance) {
@@ -72,15 +72,15 @@ public class Controleur
 	public void actionOuvrirSalon(int id) {
 		switch(id) {
 		case 1:
-			Fenetre.getInstance().afficherVue(VueStatistiques.getInstance());
+			Navigateur.getInstance().afficherVue(VueStatistiques.getInstance());
 			break;
 			
 		case 2:
-			Fenetre.getInstance().afficherVue(VueChatPublic.getInstance());
+			Navigateur.getInstance().afficherVue(VueChatPublic.getInstance());
 			break;
 			
 		case 3:
-			Fenetre.getInstance().afficherVue(VueChatPrive.getInstance());
+			actionOuvrirChatPrive(VueChatPrive.getInstance());
 			break;
 			
 		}
@@ -91,10 +91,29 @@ public class Controleur
 		List<Salon> listeMois = SalonDAO.getInstance().getListe();
 		System.out.println((listeMois.get(0)).getTitre());	
 	}
-
-	public void notifierEnvoiMessage(Message message)
+	
+	public void notifierRafraichissementChatPrive()
 	{
-		message.setUtilisateur_id(USER_ID);
-		MessageDAO.getInstance().envoyerMessage(message);		
+		lireMessagesPrives();
+	}
+
+	public void notifierEnvoiMessagePrive(Message message)
+	{
+		MessageDAO.getInstance().envoyerMessage(message);
+		//lireMessagesPrives();
+	}
+	
+	private void lireMessagesPrives()
+	{
+		List<Message> messages = MessageDAO.getInstance().listerMessagesParSalon(VueChatPrive.getInstance().getId());
+
+		try
+		{
+			VueChatPrive.getInstance().afficherMessages(messages);
+		} 
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
 	}
 }

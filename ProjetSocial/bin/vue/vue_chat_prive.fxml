@@ -124,9 +124,9 @@
       </VBox>
       <Pane layoutX="121.0" layoutY="126.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="1173.0" style="-fx-background-color: white;" stylesheets="@decoration/style.css" AnchorPane.leftAnchor="121.0" AnchorPane.topAnchor="126.0">
          <children>
-            <ScrollPane id="panneau-messages" hbarPolicy="NEVER" layoutX="55.0" layoutY="67.0" pannable="true" prefHeight="396.0" prefWidth="1063.0" vbarPolicy="NEVER">
+            <ScrollPane id="panneau-messages" hbarPolicy="NEVER" layoutX="55.0" layoutY="67.0" pannable="true" prefHeight="396.0" prefWidth="1063.0" vbarPolicy="ALWAYS">
                <content>
-                  <VBox id="vb-messages" prefHeight="500.0" prefWidth="1059.0" spacing="10.0">
+                  <VBox id="vbox-messages" fx:id="vboxMessages" prefHeight="0.0" prefWidth="1059.0" spacing="10.0">
                      <padding>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding></VBox>
@@ -134,17 +134,22 @@
             </ScrollPane>
             <Pane prefHeight="67.0" prefWidth="1173.0" style="-fx-background-color: #bbbbbb;">
                <children>
-                  <Label id="titre" layoutX="29.0" layoutY="5.0" prefHeight="58.0" prefWidth="547.0" text="Chat privé avec : {destinataire}">
+                  <Label id="titre" layoutX="52.0" layoutY="5.0" prefHeight="58.0" prefWidth="547.0" text="Chat privé avec : {destinataire}">
                      <font>
                         <Font size="28.0" />
                      </font>
                   </Label>
+                  <Button id="btn-rafraichir" layoutX="1098.0" layoutY="12.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="52.0" text="⟳">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
             <Pane layoutX="55.0" layoutY="463.0" prefHeight="126.0" prefWidth="1063.0" style="-fx-background-color: #bbbbbb;">
                <children>
                   <TextArea id="champ-message" layoutY="-1.0" prefHeight="83.0" prefWidth="1063.0" />
-                  <Button id="btn-envoyer" layoutX="997.0" layoutY="87.0" mnemonicParsing="false" text="Envoyer" />
+                  <Button id="btn-envoyer" layoutX="942.0" layoutY="82.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="121.0" text="Envoyer" />
                </children>
             </Pane>
          </children>
