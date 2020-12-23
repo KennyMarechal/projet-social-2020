@@ -19,7 +19,7 @@
 			$STATISTIQUEMESSAGE = "SELECT Count(id) 
 			From message 
 			Where utilisateur_id = :idClient AND 
-			age(date_trunc('hour', NOW()), message.moment) <= time '13:00';";
+			age(date_trunc('hour', NOW()), message.moment) <= time '12:00';";
 			$requete = BaseDeDonnees::getConnection()->prepare($STATISTIQUEMESSAGE);
 			$requete->bindParam(':idClient', $idClient, PDO::PARAM_INT);
 			$requete->execute();

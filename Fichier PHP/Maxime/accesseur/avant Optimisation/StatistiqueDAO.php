@@ -9,7 +9,7 @@
 				message.utilisateur_id,
 				date_part('hour', message.moment) as heure,
 				count(date_part('hour', message.moment)) as frequence,
-				(SELECT date_part('hour', NOW() - time '13:00') as heureminimale)
+				(SELECT date_part('hour', NOW() - time '12:00') as heureminimale)
 			From message
 			INNER JOIN (SELECT autorisation.*
 				From autorisation
@@ -17,7 +17,7 @@
 				ON autorisation.salon_id = listeAutorisations.salon_id) listeAutoriser
 			ON message.utilisateur_id = listeAutoriser.utilisateur_id AND 
 			message.salon_id = listeAutoriser.salon_id AND 
-			age(date_trunc('hour', NOW()), message.moment) <= time '13:00'
+			age(date_trunc('hour', NOW()), message.moment) <= time '12:00'
 			GROUP BY message.utilisateur_id, date_part('hour', message.moment)
 			ORDER BY message.utilisateur_id;";
 			$requete = BaseDeDonnees::getConnection()->prepare($LISTERSTATISTIQUES);
@@ -32,7 +32,7 @@
 			$STATISTIQUEMESSAGE = "SELECT Count(id) 
 			From message 
 			Where utilisateur_id = :idClient AND 
-			age(date_trunc('hour', NOW()), message.moment) <= time '13:00';";
+			age(date_trunc('hour', NOW()), message.moment) <= time '12:00';";
 			$requete = BaseDeDonnees::getConnection()->prepare($STATISTIQUEMESSAGE);
 			$requete->bindParam(':idClient', $idClient, PDO::PARAM_INT);
 			$requete->execute();
