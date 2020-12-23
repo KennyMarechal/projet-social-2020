@@ -41,7 +41,7 @@ BEGIN
 			source.utilisateur_id, 
 			source.heure, 
 			count(source.heure) as frequence, 
-			(SELECT date_part('hour', maintenant - time '13:00') as heureminimale)
+			(SELECT date_part('hour', maintenant - time '12:00') as heureminimale)
 	FROM
 	(SELECT	
 		(SELECT utilisateurs.pseudo from utilisateurs where utilisateurs.id = message.utilisateur_id),
@@ -51,7 +51,7 @@ BEGIN
 		INNER JOIN (Select listerContactsDeUtilisateurID.utilisateur_id, listerContactsDeUtilisateurID.salon_id from listerContactsDeUtilisateurID(1)) listeContactsUtilisateur
 		ON message.utilisateur_id = listeContactsUtilisateur.utilisateur_id AND 
 		message.salon_id = listeContactsUtilisateur.salon_id AND 
-		age(date_trunc('hour', maintenant), message.moment) <= time '13:00'
+		age(date_trunc('hour', maintenant), message.moment) <= time '12:00'
 
 	) source
 	GROUP BY source.pseudo, source.utilisateur_id, source.heure

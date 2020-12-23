@@ -2,7 +2,10 @@
 	include "accesseur/StatistiqueDAO.php";
 	$statistiqueDAO = new StatistiqueDAO();
 
-        $idUtilisateur = $_GET["utilisateur"];
+	if (!empty($_GET) && (isset($_GET['utilisateur']))){
+		$idUtilisateur = filter_input(INPUT_GET, 'utilisateur', FILTER_VALIDATE_INT);
+	} else { $idUtilisateur = -1; }
+        
 	$listeStatistiqueGraphique = $statistiqueDAO->getGraphiqueStatistiqueParClient($idUtilisateur);
 	$statistiqueMessage = $statistiqueDAO->getStatMessageParClient($idUtilisateur);
 ?>
