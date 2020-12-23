@@ -134,7 +134,7 @@
             </ScrollPane>
             <Pane prefHeight="67.0" prefWidth="1173.0" style="-fx-background-color: #bbbbbb;">
                <children>
-                  <Label id="titre" layoutX="52.0" layoutY="5.0" prefHeight="58.0" prefWidth="547.0" text="Chat privé avec : {destinataire}">
+                  <Label id="titre" layoutX="52.0" layoutY="5.0" prefHeight="58.0" prefWidth="924.0" text="Chat privé avec : {destinataire}">
                      <font>
                         <Font size="28.0" />
                      </font>

@@ -26,6 +26,7 @@ public class MessageDAO {
 	
 	private static final String URL_AJOUTER_MESSAGE = "https://social.tikenix.me/AjouterMessage.php";
 	private static final String URL_LISTER_MESSAGE = "https://social.tikenix.me/ListeMesage.php";
+
 	private static final String BALISE_FERMETURE = "</messages>";
 	
 	private static MessageDAO instance;

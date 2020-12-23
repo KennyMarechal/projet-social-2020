@@ -118,7 +118,7 @@ public class VueChatPrive extends Vue{
 		return message;
 	}
 	
-	public void afficherMessages(List<Message> messages) throws IOException
+	public void afficherMessages(List<Message> messages, List<String> utilisateurs) throws IOException
 	{			
 		ScrollPane scrollPane = (ScrollPane) lookup("#panneau-messages");
 		
@@ -128,6 +128,9 @@ public class VueChatPrive extends Vue{
 			vbMessages.getChildren().clear();
 			vbMessages.setPrefHeight(0);
 		}
+		
+		Label titre = (Label) lookup("#titre");
+		titre.setText("Chat avec : Tout le monde (mais ça devrait pas)");
 		
 		for (Message message : messages)
 		{			
@@ -151,7 +154,7 @@ public class VueChatPrive extends Vue{
 			Label texteDate = (Label) panneauMessage.lookup("#champ-date");
 
 			texteMessage.setText(message.getText());
-			texteUtilisateur.setText("De : " + message.getUtilisateur_id());
+			texteUtilisateur.setText("De : " + utilisateurs.get(message.getUtilisateur_id()-1));
 			texteDate.setText(String.valueOf(message.getMoment()));
 
 			conteneurMessage.getChildren().add(panneauMessage);

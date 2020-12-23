@@ -9,6 +9,7 @@ import donnee.JedisMain;
 import donnee.MessageDAO;
 import donnee.SalonDAO;
 import donnee.StatistiqueDAO;
+import donnee.UtilisateurDAO;
 import modele.Message;
 import modele.Salon;
 import vue.Navigateur;
@@ -105,10 +106,11 @@ public class Controleur
 	private void lireMessagesPrives()
 	{
 		List<Message> messages = MessageDAO.getInstance().listerMessagesParSalon(VueChatPrive.getInstance().getId());
+		List<String> utilisateurs = UtilisateurDAO.getInstance().listerNomUtilisateurs();
 
 		try
 		{
-			VueChatPrive.getInstance().afficherMessages(messages);
+			VueChatPrive.getInstance().afficherMessages(messages, utilisateurs);
 		} 
 		catch (IOException e)
 		{
