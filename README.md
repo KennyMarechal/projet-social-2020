@@ -8,7 +8,7 @@ Application de chat avec:
 - un écran de liste de salons disponibles
 
 
-## Particpants
+## Participants
 
 *Brandon Marceau*\
 *Kenny Maréchal*\
