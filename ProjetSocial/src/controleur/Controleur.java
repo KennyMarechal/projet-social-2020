@@ -40,7 +40,7 @@ public class Controleur
 	public void actionOuvrirChatPrive(VueChatPrive instance) 
 	{
 		Navigateur.getInstance().afficherVue(instance);
-		//lireMessagesPrives();
+		lireMessagesPrives();
 	}
 	
 	public void actionOuvrirChatPublic(VueChatPublic instance) {
@@ -100,7 +100,6 @@ public class Controleur
 	public void notifierEnvoiMessagePrive(Message message)
 	{
 		MessageDAO.getInstance().envoyerMessage(message);
-		//lireMessagesPrives();
 	}
 	
 	private void lireMessagesPrives()

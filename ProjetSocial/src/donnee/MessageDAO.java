@@ -96,7 +96,7 @@ public class MessageDAO {
 					continue;
 				
 				String champId = champElement.getElementsByTagName("id").item(0).getTextContent();
-				String champMoment = champElement.getElementsByTagName("moment").item(0).getTextContent();
+				String champMoment = champElement.getElementsByTagName("moment").item(0).getTextContent();				
 				String champText = champElement.getElementsByTagName("text").item(0).getTextContent();
 				String champIdSalon = champElement.getElementsByTagName("salon_id").item(0).getTextContent();
 				String champIdUtilisateur = champElement.getElementsByTagName("utilisateur_id").item(0).getTextContent();

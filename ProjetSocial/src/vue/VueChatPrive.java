@@ -147,7 +147,12 @@ public class VueChatPrive extends Vue{
 				panneauMessage.setStyle("-fx-background-color: " + Controleur.GRIS_MESSAGE);
 			}
 			Label texteMessage = (Label) panneauMessage.getChildren().get(0);
+			Label texteUtilisateur = (Label) panneauMessage.lookup("#champ-utilisateur");
+			Label texteDate = (Label) panneauMessage.lookup("#champ-date");
+
 			texteMessage.setText(message.getText());
+			texteUtilisateur.setText("De : " + message.getUtilisateur_id());
+			texteDate.setText(String.valueOf(message.getMoment()));
 
 			conteneurMessage.getChildren().add(panneauMessage);
 			vbMessages.getChildren().add(conteneurMessage);
