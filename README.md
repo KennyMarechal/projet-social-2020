@@ -26,3 +26,4 @@ Le rapport de projet est disponible pour modification sur [Drive](https://docs.g
 - https://social.tikenix.me/ListeSalonParUtilisateurId.php?utilisateur=1
 - https://social.tikenix.me/ListeMesage.php
 - https://social.tikenix.me/ListeSalon.php
+- https://dvmax.xyz/social/statistique.php?utilisateur=1
