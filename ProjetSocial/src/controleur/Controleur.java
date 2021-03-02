@@ -23,8 +23,8 @@ import vue.VueStatistiques;
 public class Controleur 
 {
 	public final static int ID_UTILISATEUR = 1;
-	public final static String BLEU_MESSAGE = "#68aded";
-	public final static String GRIS_MESSAGE = "#c9c9c9";
+	public final static String BLEU_MESSAGE = "#DBDDDF";
+	public final static String GRIS_MESSAGE = "#6C9DC1";
 	
 	public Controleur() {
 		Logger.logMsg(Logger.INFO, "new Controleur()");
