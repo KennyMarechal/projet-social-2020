@@ -33,6 +33,7 @@ public class VueChatPrive extends Vue{
 		super("vue_chat_prive.fxml");
 		super.controleur = this.controleur = new Controleur();
 		Logger.logMsg(Logger.INFO, "new VueChatPrive()");
+		actualiserAutomatique();
 	}
 	
 	
@@ -40,7 +41,7 @@ public class VueChatPrive extends Vue{
 	{
 		super.activerControles();
 	
-		//Boutons généraux
+		//Boutons gï¿½nï¿½raux
 		
 		Button actionListeSalon = (Button) lookup("#btn-salons");
 		actionListeSalon.setOnAction(new EventHandler<ActionEvent>() 
@@ -130,7 +131,7 @@ public class VueChatPrive extends Vue{
 		}
 		
 		Label titre = (Label) lookup("#titre");
-		titre.setText("Chat avec : Tout le monde (mais ça devrait pas)");
+		titre.setText("Chat avec : Tout le monde (mais ï¿½a devrait pas)");
 		
 		for (Message message : messages)
 		{			
@@ -138,7 +139,7 @@ public class VueChatPrive extends Vue{
 			Pane panneauMessage = FXMLLoader.load(getClass().getResource("/vue/message.fxml"));
 			conteneurMessage.setPrefHeight(panneauMessage.getPrefHeight());
 
-			//Affichage différent selon l'utilisateur qui a écrit le message
+			//Affichage diffï¿½rent selon l'utilisateur qui a ï¿½crit le message
 			if(message.getUtilisateur_id() == Controleur.ID_UTILISATEUR)
 			{
 				conteneurMessage.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
@@ -163,9 +164,21 @@ public class VueChatPrive extends Vue{
 			
 		}
 		scrollPane.setVvalue(1);
-
 	}
 
+	private void actualiserAutomatique(){
+		Timer timer = new Timer();
+		
+		//timer.scheduleAtFixedRate(task, firstTime, period);
+		
+		timer.scheduleAtFixedRate(new TimerTask() {
+			  @Override
+			  public void run() {
+				  Logger.logMsg(Logger.INFO, "Timer");
+				  getControleur().notifierRafraichissementChatPrive();
+			  }
+			}, 1000, 1000);
+	}
 	public int getId()
 	{
 		return this.id;
